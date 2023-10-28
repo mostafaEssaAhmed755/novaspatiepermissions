@@ -46,10 +46,19 @@ trait PermissionResourceTrait
 				->creationRules('unique:' . config('permission.table_names.permissions'))
 				->updateRules('unique:' . config('permission.table_names.permissions') . ',name,{{resourceId}}'),
 
-			Text::make(__('nova-spatie-permissions::lang.display_name'),function (){
-				return __('nova-spatie-permissions::lang.display_names.'.$this->name);
-			})->canSee(function (){
+			Text::make(__('nova-spatie-permissions::lang.display_name'), function () {
+				return __('nova-spatie-permissions::lang.display_names.' . $this->name);
+			})->canSee(function () {
 				return is_array(__('nova-spatie-permissions::lang.display_names'));
+			}),
+
+			Text::make(__('nova-spatie-permissions::lang.group'), 'group')
+				->rules(['required', 'string', 'max:255']),
+
+			Text::make(__('nova-spatie-permissions::lang.display_group'), function () {
+				return __('nova-spatie-permissions::lang.display_groups.' . $this->group);
+			})->canSee(function () {
+				return is_array(__('nova-spatie-permissions::lang.display_groups'));
 			}),
 
 			Select::make(__('nova-spatie-permissions::lang.guard_name'), 'guard_name')
