@@ -15,10 +15,20 @@ This [Nova](https://nova.laravel.com) tool lets you:
 There are no PHP dependencies except the [Laravel Nova](https://nova.laravel.com) v4 package and the [Spatie Permission](https://github.com/spatie/laravel-permission) v5 package.
 
 ## Installation
+Add Repository to `composer.json` file
+```bash
+"repositories": {
+ {
+    "type": "vcs",
+    "url": "https://github.com/mostafaEssaAhmed755/novaspatiepermissions.git"
+ }
+}
+
+```
 You can install this tool into a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
-composer require itsmejoshua/novaspatiepermissions
+composer require mdark/novaspatiepermissions
 ```
 
 Next, if you do not have package discovery enabled, you need to register the provider in the `config/app.php` file.
