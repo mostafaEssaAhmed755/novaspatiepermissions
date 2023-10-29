@@ -1,5 +1,5 @@
 {
-    "name": "mdark/novaspatiepermissions",
+    "name": "itsmejoshua/novaspatiepermissions",
     "description": "Laravel Nova tool for managing spaties roles/permissions in laravel's nova package.",
     "keywords": [
         "laravel",
